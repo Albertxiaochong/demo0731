@@ -1,11 +1,9 @@
 package com.example.demo0731.dao.model;
 
-import lombok.Data;
-
+import java.io.Serializable;
 import javax.persistence.*;
 
-@Data
-public class City {
+public class City implements Serializable {
     @Id
     @Column(name = "ID")
     private Integer id;
@@ -21,6 +19,8 @@ public class City {
 
     @Column(name = "Population")
     private Integer population;
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * @return ID
@@ -90,5 +90,21 @@ public class City {
      */
     public void setPopulation(Integer population) {
         this.population = population;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName());
+        sb.append(" [");
+        sb.append("Hash = ").append(hashCode());
+        sb.append(", id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", countrycode=").append(countrycode);
+        sb.append(", district=").append(district);
+        sb.append(", population=").append(population);
+        sb.append(", serialVersionUID=").append(serialVersionUID);
+        sb.append("]");
+        return sb.toString();
     }
 }

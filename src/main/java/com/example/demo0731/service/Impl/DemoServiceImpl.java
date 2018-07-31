@@ -15,8 +15,8 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     public String demoServiceMethod() {
-        long wq = cityMapper.selectCountByExample(new City());
-        System.out.println(wq);
+        long wq = cityMapper.selectCount(new City());
+        System.out.println("Count(city) = " + wq);
         return "service return";
     }
 }

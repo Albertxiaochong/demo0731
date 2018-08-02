@@ -2,6 +2,10 @@ package com.example.demo0731.demo0801;
 
 public class Demo01 {
     public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+
         Demo02.staticHello(); // static hello world 1
         Demo02.staticHello(); // static hello world 2
 
